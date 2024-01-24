@@ -1,9 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
+import {Header} from "@/components/header/Header";
+import {Quiz} from "@/components/quiz/Quiz";
 
 export default function Home() {
-  return (
-    <main className="">
-    </main>
-  );
-}
+    return (
+        <>
+            <Header/>
+            <Quiz />
+        </>
+    );
+};
