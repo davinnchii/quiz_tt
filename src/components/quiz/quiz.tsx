@@ -2,22 +2,31 @@
 import {HeadingText} from "@/components/headingText/HeadingText";
 import ProgressSpinner from "@/components/quiz/progressSpinner";
 import React, {useEffect, useState} from "react";
-import {redirect} from "next/navigation";
+import {redirect, useRouter} from "next/navigation";
+import {ProgressCheckmark} from "@/components/quiz/progressCheckmark";
 
 export const Quiz = () => {
     const [value, setValue] = useState(0);
+    const router = useRouter();
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setValue((v) => v + 5);
+            setValue((v) => {
+                if (v === 95) {
+                    clearInterval(interval);
+                }
+                return v + 5
+            });
         }, 500);
-
-        return () => clearInterval(interval);
     }, []);
 
     useEffect(() => {
-        if (value > 100) {
-            redirect('https://google.com');
+        if (value >= 100) {
+            const timeout = setTimeout(() => {
+                router.push('http://localhost:3000/email')
+            }, 2000);
+
+            return () => clearTimeout(timeout);
         }
     }, [value]);
 
@@ -28,33 +37,25 @@ export const Quiz = () => {
             <div
                 className="rounded-xl border border-slate-200 flex-col justify-start inline-flex">
                 <div className="p-2 bg-white border-b border-slate-200 justify-start items-center gap-3 inline-flex">
-                    <img
-                        alt="circle_Check"
-                        className="w-6 h-6" src="/circle_check.svg"/>
+                    <ProgressCheckmark value={value * 6}/>
                     <p className="text-black text-base font-medium font-Jakarta leading-normal">
                         Aligning with your goals
                     </p>
                 </div>
                 <div className="p-2 bg-white border-b border-slate-200 justify-start items-center gap-3 inline-flex">
-                    <img
-                        alt="circle_Check"
-                        className="w-6 h-6" src="/circle_check.svg"/>
+                    <ProgressCheckmark value={value * 4}/>
                     <p className="text-black text-base font-medium font-Jakarta leading-normal">
                         Reviewing your answers
                     </p>
                 </div>
                 <div className="p-2 bg-white border-b border-slate-200 justify-start items-center gap-3 inline-flex">
-                    <img
-                        alt="circle_Check"
-                        className="w-6 h-6" src="/circle_check.svg"/>
+                    <ProgressCheckmark value={value * 2}/>
                     <p className="text-black text-base font-medium font-Jakarta leading-normal">
                         Picking Bible verses and prayers for you
                     </p>
                 </div>
                 <div className="p-2 bg-white border-b border-slate-200 justify-start items-center gap-3 inline-flex">
-                    <img
-                        alt="circle_Check"
-                        className="w-6 h-6" src="/circle_check.svg"/>
+                    <ProgressCheckmark value={value}/>
                     <p className="text-black text-base font-medium font-Jakarta leading-normal">
                         Finalizing your personalized plan
                     </p>
