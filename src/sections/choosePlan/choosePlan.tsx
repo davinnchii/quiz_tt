@@ -28,7 +28,7 @@ export function ChoosePlan() {
                 full price for successive renewal periods and you will be charged $99.99 every 3 months until you cancel
                 the subscription. Payments will be charged from the card you specified here. You can cancel your
                 subscription by contacting our customer support team via email at support@awesomeapp.com Subscription Policy.
-                The charge will appear on your bill as "awesomeapp"
+                The charge will appear on your bill as &quot;awesomeapp&quot;
                     </span>
             </div>
         </section>
