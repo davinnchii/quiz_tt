@@ -12,7 +12,7 @@ export default function Layout({children}: {
     return (
         <>
             <Header/>
-            <main className="h-[95%] p-6 flex flex-col lg:items-center">
+            <main className="h-[95%] p-6 flex flex-col md:items-center">
                 {children}
             </main>
         </>

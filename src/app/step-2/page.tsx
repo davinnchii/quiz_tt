@@ -17,7 +17,7 @@ export default function Page() {
         <>
             <HeadingText text={<>See your Spiritual Growth <br/> progress by Sep 17, 2024</>}/>
             <div className="h-full relative mt-8 flex flex-col justify-end lg:w-[25%]">
-                <div className="absolute top-[-1rem] right-0 md:right-24 lg:right-24 px-4 py-2 bg-gradient-to-bl from-rose-500 to-amber-500
+                <div className="absolute top-[-1rem] right-0 lg:right-24 px-4 py-2 bg-gradient-to-bl from-rose-500 to-amber-500
                 rounded-lg text-center">
                     <span className="text-white text-sm font-bold font-Inter leading-tight">
                         Sep 17

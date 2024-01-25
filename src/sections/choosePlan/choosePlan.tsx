@@ -13,11 +13,11 @@ export function ChoosePlan() {
     }
 
     return (
-        <section className="gap-3 flex-col flex lg:items-center">
+        <section className="gap-3 flex-col flex md:items-center md:max-w-96">
             <HeadingText text={<>Choose your plan</>}/>
             <PlanCard onChange={handleChangePlan} selectedPlan={selectedPlan} price='10' period='1-Month'/>
-            <div className="lg:flex lg:flex-col lg:w-[100%] lg:items-center">
-                <div className="px-3 py-1 bg-gray-800 rounded-t-lg lg:max-w-96 lg:w-full">
+            <div className="md:flex md:flex-col md:w-[100%] md:items-center">
+                <div className="px-3 py-1 bg-gray-800 rounded-t-lg md:max-w-96 md:w-full">
                     <div
                         className="text-center text-white text-xs font-bold font-['Plus Jakarta Sans'] leading-none">MOST
                         POPULAR
@@ -27,7 +27,7 @@ export function ChoosePlan() {
             </div>
             <PlanCard onChange={handleChangePlan} price='60' period='6-Month' selectedPlan={selectedPlan}/>
             <Button text="Get my plan"/>
-            <div className="text-center lg:max-w-96">
+            <div className="text-center md:max-w-96">
                     <span
                         className="text-slate-500 text-[10px] font-normal font-['Plus Jakarta Sans'] leading-none">
                 You are enrolling in a 3-monthly subscription to<br/>
@@ -36,7 +36,7 @@ export function ChoosePlan() {
                 full price for successive renewal periods and you will be charged $99.99 every 3 months until you cancel
                 the subscription. Payments will be charged from the card you specified here. You can cancel your
                 subscription by contacting our customer support team via email at support@awesomeapp.com Subscription Policy.
-                The charge will appear on your bill as "awesomeapp"
+                The charge will appear on your bill as &quot;awesomeapp&quot;
                     </span>
             </div>
         </section>
