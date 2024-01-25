@@ -2,7 +2,8 @@
 import {HeadingText} from "@/components/headingText/HeadingText";
 import {EmailInput} from "@/components/emailInput/emailInput";
 import {useState} from "react";
-import {ContinueButton} from "@/components/continueButton/continueButton";
+import {Button} from "@/components/Button/Button";
+import {sendQuizData} from "@/utils/quizAPI";
 
 
 export default function Page() {
@@ -14,21 +15,12 @@ export default function Page() {
     }
 
     async function onClick() {
-        const options: RequestInit = {method: 'POST'};
-
         if (!email) {
             setIsValid(false);
             return;
         }
 
-        options.body = JSON.stringify({email});
-        options.headers = {'Content-Type': 'application/json'};
-
-        const response = await fetch('/api/quizResults', options)
-
-        const data = await response.json();
-
-        console.log(data);
+        await sendQuizData({email});
     }
 
     return (
@@ -40,7 +32,7 @@ export default function Page() {
                     <span className="text-red-600 text-xs font-medium font-['Inter'] leading-normal">Error</span>
                 )}
             </div>
-            <ContinueButton onClick={onClick}/>
+            <Button text="Continue" onClick={onClick} url={'/step-2'}/>
         </>
     );
 };

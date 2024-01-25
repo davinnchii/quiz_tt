@@ -20,6 +20,11 @@ const config: Config = {
             colors: {
                 "progressSpinner": '#0CBD68',
             },
+            backgroundImage: {
+                "graph": "url('/graph.png')",
+                "radio": "url('/radio.svg')",
+                "radioChecked": "url('/circle_check.svg')",
+            }
         },
     },
     plugins: [nextui()],

@@ -4,6 +4,7 @@ import ProgressSpinner from "@/components/quiz/progressSpinner";
 import React, {useEffect, useState} from "react";
 import {redirect, useRouter} from "next/navigation";
 import {ProgressCheckmark} from "@/components/quiz/progressCheckmark";
+import {BASE_DEV_URL} from "@/utils/constants";
 
 export const Quiz = () => {
     const [value, setValue] = useState(0);
@@ -23,7 +24,7 @@ export const Quiz = () => {
     useEffect(() => {
         if (value >= 100) {
             const timeout = setTimeout(() => {
-                router.push('http://localhost:3000/email')
+                router.push(`/step-1`);
             }, 2000);
 
             return () => clearTimeout(timeout);
