@@ -12,7 +12,7 @@ export default function Layout({children}: {
     return (
         <>
             <Header/>
-            <main className="p-6 flex flex-col gap-10">
+            <main className="p-6 flex flex-col gap-10 lg:items-center">
                 {children}
             </main>
         </>
