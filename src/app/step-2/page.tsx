@@ -34,7 +34,7 @@ export default function Page() {
                 <div className="w-full h-px left-0 top-[117px] absolute bg-black bg-opacity-10"/>
                 <div className="w-full h-px left-0 top-[70px] absolute bg-black bg-opacity-10"/>
                 <div
-                    className="absolute left-0 bottom-28 lg:bottom-[22rem] w-[55px] h-9 px-3 py-2 bg-white rounded-lg shadow border border-black border-opacity-10">
+                    className="absolute left-0 bottom-16 lg:bottom-[22rem] w-[55px] h-9 px-3 py-2 bg-white rounded-lg shadow border border-black border-opacity-10">
                     <div className="text-black text-sm font-medium font-['Inter'] leading-tight">Now</div>
                 </div>
                 <div className="absolute top-16 left-0">
