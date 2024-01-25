@@ -2,7 +2,7 @@ import {HeadingText} from "@/components/headingText/HeadingText";
 
 export function Benefits() {
     return (
-        <section>
+        <section className="md:flex flex-col md:items-center">
             <HeadingText text={<>What you get</>}/>
             <div
                 className="bg-white rounded-lg shadow border border-black border-opacity-10 flex-col justify-start items-center inline-flex">

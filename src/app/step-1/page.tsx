@@ -4,9 +4,11 @@ import {EmailInput} from "@/components/emailInput/emailInput";
 import {useState} from "react";
 import {Button} from "@/components/Button/Button";
 import {sendQuizData} from "@/utils/quizAPI";
+import {useRouter} from "next/navigation";
 
 
 export default function Page() {
+    const router = useRouter();
     const [email, setEmail] = useState('');
     const [isValid, setIsValid] = useState(true);
     const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,6 +23,8 @@ export default function Page() {
         }
 
         await sendQuizData({email});
+
+        const timeout = setTimeout(() => router.push('/step-2'), 1000);
     }
 
     return (
@@ -32,7 +36,7 @@ export default function Page() {
                     <span className="text-red-600 text-xs font-medium font-['Inter'] leading-normal">Error</span>
                 )}
             </div>
-            <Button text="Continue" onClick={onClick} url={'/step-2'}/>
+            <Button text="Continue" onClick={onClick} />
         </>
     );
 };
