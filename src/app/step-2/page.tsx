@@ -11,13 +11,13 @@ export default function Page() {
         const data = await getQuizData()
         console.log(data);
 
-        const timeout = setTimeout(() => router.push('/landing-page'), 1000);
+        router.push('/landing-page');
     }
     return (
         <>
             <HeadingText text={<>See your Spiritual Growth <br/> progress by Sep 17, 2024</>}/>
-            <div className="h-full relative mt-8 flex flex-col justify-end lg:w-[25%]">
-                <div className="absolute top-[-1rem] right-0 lg:right-24 px-4 py-2 bg-gradient-to-bl from-rose-500 to-amber-500
+            <div className="relative h-full flex flex-col lg:w-[25%]">
+                <div className="absolute top-[-5rem] right-0 px-3 py-2 box-border bg-gradient-to-bl from-rose-500 to-amber-500
                 rounded-lg text-center">
                     <span className="text-white text-sm font-bold font-Inter leading-tight">
                         Sep 17
@@ -27,22 +27,23 @@ export default function Page() {
                         2024
                     </span>
                 </div>
-                <div className="w-full h-px left-0 top-[305px] absolute bg-black bg-opacity-10"/>
-                <div className="w-full h-px left-0 top-[258px] absolute bg-black bg-opacity-10"/>
-                <div className="w-full h-px left-0 top-[211px]  absolute bg-black bg-opacity-10"/>
-                <div className="w-full h-px left-0 top-[164px] absolute bg-black bg-opacity-10"/>
-                <div className="w-full h-px left-0 top-[117px] absolute bg-black bg-opacity-10"/>
-                <div className="w-full h-px left-0 top-[70px] absolute bg-black bg-opacity-10"/>
+                <div className="flex flex-col min-h-[250px] justify-between">
+                    <div className="w-full h-px bg-black bg-opacity-10"/>
+                    <div className="w-full h-px bg-black bg-opacity-10"/>
+                    <div className="w-full h-px bg-black bg-opacity-10"/>
+                    <div className="w-full h-px bg-black bg-opacity-10"/>
+                    <div className="w-full h-px bg-black bg-opacity-10"/>
+                    <div className="w-full h-px bg-black bg-opacity-10"/>
+                </div>
                 <div
-                    className="absolute left-0 bottom-16 lg:bottom-[22rem] w-[55px] h-9 px-3 py-2 bg-white rounded-lg shadow border border-black border-opacity-10">
+                    className="absolute left-0 bottom-[-2.5rem] lg:bottom-[17rem] w-[55px] h-9 px-3 py-2 bg-white rounded-lg shadow border border-black border-opacity-10">
                     <div className="text-black text-sm font-medium font-['Inter'] leading-tight">Now</div>
                 </div>
-                <div className="absolute top-16 left-0">
+                <div className="absolute top-0 left-0 ">
                     <img src="/graph.png" alt="graph"/>
                 </div>
-
-                <Button text="Continue" onClick={onClick} />
             </div>
+            <Button text="Continue" onClick={onClick} classNames="mt-8"/>
         </>
     )
 }

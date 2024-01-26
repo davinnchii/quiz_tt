@@ -32,7 +32,7 @@ export const Quiz = () => {
     }, [value]);
 
     return (
-        <main className="p-6 flex-col justify-start items-center gap-6 inline-flex text-center w-full">
+        <main className="p-6 flex-col justify-start items-center gap-6 inline-flex w-full">
             <HeadingText text="We are crafting your spiritual growth plan"/>
             <ProgressSpinner value={value}/>
             <div

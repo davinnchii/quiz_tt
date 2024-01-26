@@ -1,5 +1,6 @@
 import {Metadata} from "next";
 import {Header} from "@/components/header/Header";
+import {Button} from "@/components/Button/Button";
 
 export const metadata: Metadata = {
     title: "Get your plan",
@@ -12,7 +13,7 @@ export default function Layout({children}: {
     return (
         <>
             <Header/>
-            <main className="h-[95%] p-6 flex flex-col md:items-center">
+            <main className="h-full justify-between p-6 flex flex-col md:items-center gap-8">
                 {children}
             </main>
         </>
