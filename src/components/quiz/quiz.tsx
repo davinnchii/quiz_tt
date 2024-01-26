@@ -22,17 +22,17 @@ export const Quiz = () => {
     }, []);
 
     useEffect(() => {
-        if (value >= 100) {
-            const timeout = setTimeout(() => {
-                router.push(`/step-1`);
-            }, 2000);
-
-            return () => clearTimeout(timeout);
-        }
+        // if (value >= 100) {
+        //     const timeout = setTimeout(() => {
+        //         router.push(`/step-1`);
+        //     }, 2000);
+        //
+        //     return () => clearTimeout(timeout);
+        // }
     }, [value]);
 
     return (
-        <main className="p-6 flex-col justify-start items-center gap-6 inline-flex text-center w-full">
+        <main className="p-6 flex-col justify-start items-center gap-6 inline-flex w-full">
             <HeadingText text="We are crafting your spiritual growth plan"/>
             <ProgressSpinner value={value}/>
             <div
