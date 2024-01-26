@@ -22,13 +22,13 @@ export const Quiz = () => {
     }, []);
 
     useEffect(() => {
-        // if (value >= 100) {
-        //     const timeout = setTimeout(() => {
-        //         router.push(`/step-1`);
-        //     }, 2000);
-        //
-        //     return () => clearTimeout(timeout);
-        // }
+        if (value >= 100) {
+            const timeout = setTimeout(() => {
+                router.push(`/step-1`);
+            }, 2000);
+
+            return () => clearTimeout(timeout);
+        }
     }, [value]);
 
     return (
